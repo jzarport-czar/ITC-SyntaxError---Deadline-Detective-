@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadline Detective | Academic Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topline">
+        <div class="brand">
+          <img
+            src="https://gordoncollege.edu.ph/w3/wp-content/uploads/2025/09/GC-LOGO-2025-01.png"
+            alt="Gordon College logo"
+          />
+          <img
+            src="https://gordoncollege.edu.ph/ccs/wp-content/uploads/2024/03/cropped-CCS.png"
+            alt="College of Computer Studies logo"
+          />
+          <span>Deadline <b>Detective</b></span>
+        </div>
+        <div class="tag">Gordon College · BSIT Student Planner</div>
+      </div>
+      <h1>Stay ahead of every deadline.</h1>
+      <p>
+        Organize assignments, exams, and projects in one place. Keep track of
+        your work and add deadlines to Google Calendar.
+      </p>
+    </header>
+
+    <main>
+      <section class="stats">
+        <div class="stat">
+          <small>Tasks to finish</small><strong id="totalCount">0</strong>
+        </div>
+        <div class="stat">
+          <small>Due in 7 days</small><strong id="weekCount">0</strong>
+        </div>
+        <div class="stat">
+          <small>Completed</small><strong id="doneCount">0</strong>
+        </div>
+      </section>
+
+      <div class="layout">
+        <section class="panel">
+          <h2>My task list</h2>
+          <p class="sub">
+            Your tasks are sorted by due date. Search or filter the list
+            anytime.
+          </p>
+          <div class="toolbar">
+            <input
+              id="search"
+              class="search"
+              type="search"
+              placeholder="Search tasks or subjects..."
+              aria-label="Search tasks"
+            />
+            <select id="filter" aria-label="Filter tasks">
+              <option value="all">All tasks</option>
+              <option value="open">Not completed</option>
+              <option value="done">Completed</option>
+              <option value="high">High priority</option>
+            </select>
+          </div>
+          <div id="taskList" class="task-list"></div>
+        </section>
+
+        <aside class="panel">
+          <h2>Add a task</h2>
+          <p class="sub">Enter your task details and deadline.</p>
+          <form id="taskForm">
+            <div class="field">
+              <label for="title">Task title *</label>
+              <input
+                id="title"
+                required
+                maxlength="90"
+                placeholder="e.g. GEC 01 reflection paper"
+              />
+            </div>
+            <div class="two">
+              <div class="field">
+                <label for="subject">Subject / course</label>
+                <input id="subject" placeholder="e.g. Understanding the Self" />
+              </div>
+              <div class="field">
+                <label for="type">Task type</label>
+                <select id="type">
+                  <option>Assignment</option>
+                  <option>Project</option>
+                  <option>Exam</option>
+                  <option>Presentation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label for="due">Due date *</label>
+                <input id="due" type="date" required />
+              </div>
+              <div class="field">
+                <label for="priority">Priority</label>
+                <select id="priority">
+                  <option>High</option>
+                  <option selected>Medium</option>
+                  <option>Low</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes">Notes (optional)</label>
+              <textarea
+                id="notes"
+                maxlength="240"
+                placeholder="What do you need to remember?"
+              ></textarea>
+            </div>
+            <button class="btn full" type="submit">
+              + Add to my task list
+            </button>
+          </form>
+          <div class="notice">
+            <strong>Detective tip</strong>Use the Google Calendar button on a
+            task to add its deadline to your calendar.
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer>
+      Your tasks are saved in this browser. Google Calendar events are added
+      after you confirm them in Google Calendar.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
